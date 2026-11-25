@@ -1,0 +1,12 @@
+LA RÉFÉRENCE — COMPTES PARENTS
+
+Le parcours d'inscription contient la logique suivante :
+- Recherche d'un dossier parent dans le même établissement à partir du téléphone normalisé.
+- Réutilisation du dossier parent et de son compte actif pour les frères et sœurs.
+- Si aucun compte actif n'est lié, appel de la fonction manage-access pour créer le compte parent.
+- L'identifiant et le mot de passe provisoire sont affichés si la création réussit ; le parent doit changer le mot de passe à la première connexion.
+- Si la création du compte échoue (droits, doublon ou erreur technique), le dossier parent et le lien enfant-parent sont conservés et un message demande à l'administration d'activer l'accès depuis Gestion des accès.
+
+La fonction Supabase manage-access version 9 est ACTIVE. Elle autorise la création parent pour les rôles définis dans la fonction et vérifie l'appartenance à l'établissement pour les utilisateurs non administrateurs généraux.
+
+À tester avant utilisation réelle : inscription par secrétariat, inscription par administrateur général, parent avec plusieurs enfants, téléphone déjà utilisé, téléphone vide ou mal saisi, connexion parent et changement du mot de passe provisoire.
